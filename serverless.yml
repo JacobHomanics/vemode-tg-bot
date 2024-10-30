@@ -1,0 +1,27 @@
+service: aws-node-telegram-echo-bot
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  sendMessage:
+    handler: handler.sendMessage
+    events:
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
+
+# functions:
+#   # webhook:
+#   #   handler: handler.webhook
+#   #   events:
+#   #     - http:
+#   #         path: webhook
+#   #         method: post
+#   listenForEvents:
+#     handler: handler.listenForEvents
+#     events:
+#       - schedule:
+#           rate: rate(1 minute)
+#           enabled: true

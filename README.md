@@ -51,8 +51,10 @@ $ serverless deploy
 
 ```
 curl --request POST --url https://api.telegram.org/bot{token}/setWebhook --header 'content-type: application/json' --data '{"url": "{end-poinnt}"}'
-
-curl --request POST --url https://api.telegram.org/bot7871075053:AAHUBF4qkfT_V-kU6UB5X4y8YWwr40VETPU/setWebhook --header 'content-type: application/json' --data '{"url": "https://8igqju12ua.execute-api.us-east-1.amazonaws.com/dev/webhook"}'
 ```
 
 Say `hello` to your bot 🤖
+
+serverless deploy
+
+serverless invoke -f sendMessage

@@ -7,6 +7,8 @@ const { contractABI } = require('./abi.js');
 const axios = require('axios');
 
 
+const chatId = "-1002346177126";
+
   const token = process.env.TELEGRAM_TOKEN;
   const BASE_URL = `https://api.telegram.org/bot${token}/sendMessage`;
 
@@ -19,6 +21,7 @@ const axios = require('axios');
   let lastBlock = null;
 
   module.exports.sendMessage = async () => {
+
     try {
       const currentBlock = await client.getBlockNumber();
 
@@ -50,7 +53,7 @@ const axios = require('axios');
 
         request.post(BASE_URL).form({
           text: message,
-          chat_id: 1427698642
+          chat_id: chatId
         });
 
         lastBlock = currentBlock;
@@ -59,7 +62,7 @@ const axios = require('axios');
     } else {
       request.post(BASE_URL).form({
         text: "No new events detected!!!",
-        chat_id: 1427698642
+        chat_id: chatId
       });
     }
 

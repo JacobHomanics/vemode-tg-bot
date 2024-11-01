@@ -3,6 +3,8 @@ service: aws-node-telegram-echo-bot
 provider:
   name: aws
   runtime: nodejs18.x
+  environment:
+    TELEGRAM_TOKEN: ${env:TELEGRAM_TOKEN}
 
 functions:
   sendMessage:

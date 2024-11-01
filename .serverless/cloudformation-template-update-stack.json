@@ -91,13 +91,18 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-43fe1c52-760d",
-          "S3Key": "serverless/aws-node-telegram-echo-bot/dev/1730146803318-2024-10-28T20:20:03.318Z/aws-node-telegram-echo-bot.zip"
+          "S3Key": "serverless/aws-node-telegram-echo-bot/dev/1730438129190-2024-11-01T05:15:29.190Z/aws-node-telegram-echo-bot.zip"
         },
         "Handler": "handler.sendMessage",
         "Runtime": "nodejs18.x",
         "FunctionName": "aws-node-telegram-echo-bot-dev-sendMessage",
         "MemorySize": 1024,
         "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "TELEGRAM_TOKEN": "7783168017:AAF2fjJsBQWmT6ze7m2IzxFjzj5HQe9fuD0"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -109,14 +114,14 @@
         "SendMessageLogGroup"
       ]
     },
-    "SendMessageLambdaVersionLz0kx1VKs1s56P44Di4u36uIpBtbABzK5ChkaKVQAE": {
+    "SendMessageLambdaVersionwJHdiLETelmR1mIsUznIxbJ0MKqMiWvxS38wN0ASm0": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SendMessageLambdaFunction"
         },
-        "CodeSha256": "7elrtalE4TrKfq8DodPzaXmKy0RWgmjMzlToskKb0V0="
+        "CodeSha256": "QKE65DFQJLWQfBPVLSLhWz2WjIWuw0M8Zub7sx8hbyg="
       }
     },
     "SendMessageEventsRuleSchedule1": {
@@ -167,7 +172,7 @@
     "SendMessageLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SendMessageLambdaVersionLz0kx1VKs1s56P44Di4u36uIpBtbABzK5ChkaKVQAE"
+        "Ref": "SendMessageLambdaVersionwJHdiLETelmR1mIsUznIxbJ0MKqMiWvxS38wN0ASm0"
       },
       "Export": {
         "Name": "sls-aws-node-telegram-echo-bot-dev-SendMessageLambdaFunctionQualifiedArn"

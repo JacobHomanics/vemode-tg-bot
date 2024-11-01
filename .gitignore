@@ -2,6 +2,7 @@
 
 
 # dependencies
+/.serverless
 /node_modules
 /.pnp
 .pnp.js
@@ -36,5 +37,3 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
-/.serverless
